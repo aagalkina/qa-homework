@@ -1,0 +1,560 @@
+{
+  "info": {
+    "_postman_id": "32f26dd6-400b-4a14-a3fa-e6db5f8883e2",
+    "name": "New Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39004443"
+  },
+  "item": [
+    {
+      "name": "user list (no auth)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://dummyapi.io/data/v1/user",
+          "protocol": "https",
+          "host": [
+            "dummyapi",
+            "io"
+          ],
+          "path": [
+            "data",
+            "v1",
+            "user"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "user list",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://dummyapi.io/data/v1/user",
+          "protocol": "https",
+          "host": [
+            "dummyapi",
+            "io"
+          ],
+          "path": [
+            "data",
+            "v1",
+            "user"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Pagination",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://dummyapi.io/data/v1/user?page=1&limit=10",
+          "protocol": "https",
+          "host": [
+            "dummyapi",
+            "io"
+          ],
+          "path": [
+            "data",
+            "v1",
+            "user"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "limit",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create user",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"firstName\": \"Alex\",\r\n\"lastName\": \"QA\",\r\n\"email\": \"postmantestind@yopmail.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://dummyapi.io/data/v1/user/create",
+          "protocol": "https",
+          "host": [
+            "dummyapi",
+            "io"
+          ],
+          "path": [
+            "data",
+            "v1",
+            "user",
+            "create"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update user",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"firstName\": \"AlexTest\",\r\n\"lastName\": \"QATest\",\r\n\"phone\": 12345678\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://dummyapi.io/data/v1/user/:id",
+          "protocol": "https",
+          "host": [
+            "dummyapi",
+            "io"
+          ],
+          "path": [
+            "data",
+            "v1",
+            "user",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "69dff8d435765d76205be35b"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Check user after update",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"firstName\": \"AlexTest\",\r\n\"lastName\": \"QATest\",\r\n\"phone\": 12345678\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://dummyapi.io/data/v1//user/:id",
+          "protocol": "https",
+          "host": [
+            "dummyapi",
+            "io"
+          ],
+          "path": [
+            "data",
+            "v1",
+            "",
+            "user",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "69dff8d435765d76205be35b"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create post",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"text\": \"text\",\r\n\"image\": \"https://randomuser.me/api/portraits/med/women/18.jpg\",\r\n\"likes\": 1000,\r\n\"tags\": \"qa\",\r\n\"owner\": \"69dff8d435765d76205be35b\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://dummyapi.io/data/v1/post/create",
+          "protocol": "https",
+          "host": [
+            "dummyapi",
+            "io"
+          ],
+          "path": [
+            "data",
+            "v1",
+            "post",
+            "create"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Check post",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"text\": \"text\",\r\n\"image\": \"https://randomuser.me/api/portraits/med/women/18.jpg\",\r\n\"likes\": 1000,\r\n\"tags\": \"qa\",\r\n\"owner\": \"69dff8d435765d76205be35b\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://dummyapi.io/data/v1/user/:id/post",
+          "protocol": "https",
+          "host": [
+            "dummyapi",
+            "io"
+          ],
+          "path": [
+            "data",
+            "v1",
+            "user",
+            ":id",
+            "post"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "69dff8d435765d76205be35b"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Check post list",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://dummyapi.io/data/v1/post",
+          "protocol": "https",
+          "host": [
+            "dummyapi",
+            "io"
+          ],
+          "path": [
+            "data",
+            "v1",
+            "post"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create comment",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"message\": \"comment\",\r\n\"owner\": \"69dff8d435765d76205be35b\",\r\n\"post\": \"69dffd6435765d39be5be680\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://dummyapi.io/data/v1/comment/create",
+          "protocol": "https",
+          "host": [
+            "dummyapi",
+            "io"
+          ],
+          "path": [
+            "data",
+            "v1",
+            "comment",
+            "create"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Check comment",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"message\": \"comment\",\r\n\"owner\": \"69dff8d435765d76205be35b\",\r\n\"post\": \"69dffd6435765d39be5be680\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://dummyapi.io/data/v1/user/:id/comment",
+          "protocol": "https",
+          "host": [
+            "dummyapi",
+            "io"
+          ],
+          "path": [
+            "data",
+            "v1",
+            "user",
+            ":id",
+            "comment"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "69dff8d435765d76205be35b"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete comment",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"message\": \"comment\",\r\n\"owner\": \"69dff8d435765d76205be35b\",\r\n\"post\": \"69dffd6435765d39be5be680\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://dummyapi.io/data/v1/comment/69e0005b35765d97f35be69c",
+          "protocol": "https",
+          "host": [
+            "dummyapi",
+            "io"
+          ],
+          "path": [
+            "data",
+            "v1",
+            "comment",
+            "69e0005b35765d97f35be69c"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Check comment after delete",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"message\": \"comment\",\r\n\"owner\": \"69dff8d435765d76205be35b\",\r\n\"post\": \"69dffd6435765d39be5be680\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://dummyapi.io/data/v1/user/:id/comment",
+          "protocol": "https",
+          "host": [
+            "dummyapi",
+            "io"
+          ],
+          "path": [
+            "data",
+            "v1",
+            "user",
+            ":id",
+            "comment"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "69dff8d435765d76205be35b"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "delete user",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"message\": \"comment\",\r\n\"owner\": \"69dff8d435765d76205be35b\",\r\n\"post\": \"69dffd6435765d39be5be680\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://dummyapi.io/data/v1/user/:id",
+          "protocol": "https",
+          "host": [
+            "dummyapi",
+            "io"
+          ],
+          "path": [
+            "data",
+            "v1",
+            "user",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "69dff8d435765d76205be35b"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Check after remove",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"message\": \"comment\",\r\n\"owner\": \"69dff8d435765d76205be35b\",\r\n\"post\": \"69dffd6435765d39be5be680\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://dummyapi.io/data/v1/user/:id",
+          "protocol": "https",
+          "host": [
+            "dummyapi",
+            "io"
+          ],
+          "path": [
+            "data",
+            "v1",
+            "user",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "69dff8d435765d76205be35b"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "value",
+        "value": "62e6f10d11c051e2d93a6723",
+        "type": "string"
+      },
+      {
+        "key": "key",
+        "value": "app-id",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
